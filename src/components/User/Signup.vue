@@ -74,7 +74,11 @@
     },
     computed: {
       comparePasswords () {
-        return this.password !== this.confirmPassword ? 'Passwords do not match' : ''
+        if (this.confirmPassword !== '') {
+          return this.password !== this.confirmPassword ? 'Passwords do not match' : true
+        }
+
+        return true
       },
       user () {
         return this.$store.getters.user
