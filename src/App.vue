@@ -73,9 +73,9 @@
         ]
         if (this.userIsAuthenticated) {
           menuItems = [
-            {icon: 'description', title: 'Scale Ticket', link: '/meetups'},
-            {icon: 'view_headline', title: 'Packing Slip', link: '/meetup/new'},
-            {icon: 'settings', title: 'Settings', link: '/profile'}
+            {icon: 'description', title: 'Scale Ticket', link: '/scaleticket'},
+            {icon: 'view_headline', title: 'Packing Slip', link: '/packingslip'},
+            {icon: 'settings', title: 'Settings', link: '/settings'}
           ]
         }
         return menuItems

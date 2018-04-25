@@ -11,11 +11,11 @@
       <v-flex xs12>
         <v-carousel>
           <v-carousel-item
-            v-for="meetup in meetups"
-            :src="meetup.imageUrl"
-            :key="meetup.id">
+            v-for="yard in yards"
+            :src="yard.imageUrl"
+            :key="yard.id">
               <div class="title">
-                {{ meetup.title }}
+                {{ yard.title }}
               </div>
           </v-carousel-item>
         </v-carousel>
@@ -33,7 +33,7 @@
   export default {
     data () {
       return {
-        meetups: [
+        yards: [
           { imageUrl: 'http://images.jdmagicbox.com/comp/hyderabad/a2/040pxx40.xx40.170828104843.d4a2/catalogue/al-hamad-scrap-merchants-golconda-fort-hyderabad-scrap-buyers-49hb1og.jpg', id: 'afajfjadfaadfa323', title: 'Toronto Yard' },
           { imageUrl: 'http://scrapbuyerss.com/images/Aluminium-Scrap-Buyer.jpg', id: 'aadsfhbkhlk1241', title: 'New York Yard' },
           { imageUrl: 'https://content3.jdmagicbox.com/comp/hyderabad/r6/040pxx40.xx40.141107200908.i6r6/catalogue/titan-steels-musheerabad-hyderabad-scrap-buyers-3lxgsc2.jpg', id: 'aadsfhbkhlk1241a', title: 'Boston Yard' }

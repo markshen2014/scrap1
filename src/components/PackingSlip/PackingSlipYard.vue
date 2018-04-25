@@ -1,10 +1,18 @@
 <template>
-
+  <div>
+    ps page
+  </div>
 </template>
 
 <script>
     export default {
-      name: 'PackingSlipYard'
+      name: 'PackingSlipYard',
+      data () {
+        return {
+          message: '',
+          error: ''
+        }
+      }
     }
 </script>
 

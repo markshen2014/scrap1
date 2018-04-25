@@ -7,6 +7,7 @@ import Signin from '@/components/User/Signin'
 import PackingSlipYard from '@/components/PackingSlip/PackingSlipYard'
 import ScaleTicketYard from '@/components/ScaleTicket/ScaleTicketYard'
 import MainPage from '@/components/Admin/MainPage'
+import Settings from '@/components/Scrapit/Settings'
 
 Vue.use(Router)
 
@@ -31,6 +32,11 @@ export default new Router({
       path: '/admin-main',
       name: 'MainPage',
       component: MainPage
+    },
+    {
+      path: '/settings',
+      name: 'Settings',
+      component: Settings
     },
     {
       path: '/scaleticket',

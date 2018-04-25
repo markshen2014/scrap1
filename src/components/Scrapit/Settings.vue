@@ -1,10 +1,18 @@
 <template>
-    $END$
+  <div>
+    settings page
+  </div>
 </template>
 
 <script>
     export default {
-        name: "Settings"
+      name: 'Settings',
+      data () {
+        return {
+          message: '',
+          error: ''
+        }
+      }
     }
 </script>
 

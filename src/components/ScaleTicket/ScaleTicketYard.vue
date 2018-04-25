@@ -1,10 +1,18 @@
 <template>
-
+  <div>
+    scale page
+  </div>
 </template>
 
 <script>
     export default {
-      name: 'ScaleTicketYard'
+      name: 'ScaleTicketYard',
+      data () {
+        return {
+          message: '',
+          error: ''
+        }
+      }
     }
 </script>
 
