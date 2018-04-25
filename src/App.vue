@@ -3,7 +3,7 @@
     <v-navigation-drawer
       fixed
       app
-      v-model="sideNav" >
+      v-model="sideNav" class="hidden-sm-and-up" >
       <v-list>
         <v-list-tile
           v-for="item in menuItems"
@@ -27,7 +27,7 @@
     <v-toolbar dark class="primary">
       <v-toolbar-side-icon
         @click.stop="sideNav = !sideNav"
-        class="hidden-sm-and-up "></v-toolbar-side-icon>
+        class="hidden-sm-and-up"></v-toolbar-side-icon>
       <v-toolbar-title>
         <router-link to="/" tag="span" style="cursor: pointer">ScraptIT</router-link>
       </v-toolbar-title>
@@ -68,7 +68,7 @@
     computed: {
       menuItems () {
         let menuItems = [
-          {icon: 'face', title: 'Sign up', link: '/signup'},
+          {icon: 'assignment', title: 'Sign up', link: '/signup'},
           {icon: 'lock_open', title: 'Sign in', link: '/signin'}
         ]
         if (this.userIsAuthenticated) {
