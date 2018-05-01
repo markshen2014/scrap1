@@ -81,25 +81,31 @@ export default {
     signUserIn ({commit}, payload) {
       commit('setLoading', true)
       commit('clearError')
-      firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
-        .then(
-          user => {
-            commit('setLoading', false)
+      console.log('test1')
+      window.$ajax({
+        url: 'http://iybcons.iyb.ca:8484/marks/v1/userLogin',
+        data: { user: payload.email, password: payload.password },
+        type: 'POST',
+        error: function () {
+          console.log('error')
+        },
+        success: function (data) {
+          console.log(data)
+          const jsondata = JSON.parse(data)
+          console.log(jsondata)
+          console.log(jsondata.defaultCompany)
+
+          if (jsondata.result === 'Valid Login') {
             const newUser = {
-              id: user.uid,
+              id: jsondata.userID,
               registeredMeetups: [],
               fbKeys: {}
             }
+
             commit('setUser', newUser)
           }
-        )
-        .catch(
-          error => {
-            commit('setLoading', false)
-            commit('setError', error)
-            console.log(error)
-          }
-        )
+        }
+      }) // end ajax
     },
     autoSignIn ({commit}, payload) {
       commit('setUser', {

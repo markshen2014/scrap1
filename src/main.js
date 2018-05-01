@@ -12,6 +12,9 @@ import AlertCmp from './components/Shared/Alert.vue'
 Vue.use(Vuetify)
 Vue.config.productionTip = false
 
+window.$ = window.jQuery = require('jquery')
+window.$ajax = window.$.ajax
+
 Vue.component('app-alert', AlertCmp)
 
 /* eslint-disable no-new */

@@ -1,5 +1,9 @@
 export default {
   state: {
+    userId: null,
+    companyId: null,
+    yardId: null,
+    scaleId: null,
     loading: false,
     error: null
   },

@@ -15,10 +15,9 @@
                   <v-flex xs12>
                     <v-text-field
                       name="email"
-                      label="User Mail"
+                      label="User Name"
                       id="email"
                       v-model="email"
-                      type="email"
                       required></v-text-field>
                   </v-flex>
                 </v-layout>
