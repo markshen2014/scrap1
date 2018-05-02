@@ -78,7 +78,7 @@ export default {
           }
         )
     },
-    signUserIn ({commit}, payload) {
+    signUserIn ({commit, dispatch}, payload) {
       commit('setLoading', true)
       commit('clearError')
       console.log('test1')
@@ -101,7 +101,7 @@ export default {
               registeredMeetups: [],
               fbKeys: {}
             }
-
+            dispatch('fetchYards')
             commit('setUser', newUser)
           }
         }
@@ -141,6 +141,12 @@ export default {
     logout ({commit}) {
       firebase.auth().signOut()
       commit('setUser', null)
+    },
+    fetchYards ({commit}) {
+      console.log('yard')
+    },
+    fetchCompanies ({commit}) {
+      console.log('company')
     }
   },
   getters: {
