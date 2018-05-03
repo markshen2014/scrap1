@@ -81,19 +81,19 @@ export default {
     signUserIn ({commit, dispatch}, payload) {
       commit('setLoading', true)
       commit('clearError')
-      console.log('test1')
+      // console.log('signin')
       window.$ajax({
-        url: 'http://iybcons.iyb.ca:8484/marks/v1/userLogin',
+        url: window.url + '/v1/userLogin',
         data: { user: payload.email, password: payload.password },
         type: 'POST',
         error: function () {
           console.log('error')
         },
         success: function (data) {
-          console.log(data)
+          // console.log(data)
           const jsondata = JSON.parse(data)
           console.log(jsondata)
-          console.log(jsondata.defaultCompany)
+          // console.log(jsondata.defaultCompany)
 
           if (jsondata.result === 'Valid Login') {
             const newUser = {
@@ -142,11 +142,36 @@ export default {
       firebase.auth().signOut()
       commit('setUser', null)
     },
-    fetchYards ({commit}) {
-      console.log('yard')
+    fetchYards ({commit, dispatch}) {
+      // console.log('yard')
+      window.$ajax({
+        url: window.url + '/yard_list',
+        type: 'GET',
+        error: function () {
+          console.log('error')
+        },
+        success: function (data) {
+          // console.log(data)
+          const jsondata = JSON.parse(data)
+          console.log(jsondata)
+          dispatch('fetchCompanies')
+        }
+      }) // end ajax
     },
     fetchCompanies ({commit}) {
-      console.log('company')
+      // console.log('company')
+      window.$ajax({
+        url: window.url + '/company_list',
+        type: 'GET',
+        error: function () {
+          console.log('error')
+        },
+        success: function (data) {
+          // console.log(data)
+          const jsondata = JSON.parse(data)
+          console.log(jsondata)
+        }
+      }) // end ajax
     }
   },
   getters: {
