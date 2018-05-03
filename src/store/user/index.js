@@ -2,7 +2,9 @@ import * as firebase from 'firebase'
 
 export default {
   state: {
-    user: null
+    user: null,
+    companies: [],
+    yards: []
   },
   mutations: {
     registerUserForMeetup (state, payload) {
@@ -20,6 +22,12 @@ export default {
     },
     setUser (state, payload) {
       state.user = payload
+    },
+    setCompanies (state, payload) {
+      state.companies = payload
+    },
+    setYards (state, payload) {
+      state.yards = payload
     }
   },
   actions: {
@@ -154,6 +162,7 @@ export default {
           // console.log(data)
           const jsondata = JSON.parse(data)
           console.log(jsondata)
+          commit('setYards', jsondata)
           dispatch('fetchCompanies')
         }
       }) // end ajax
@@ -170,6 +179,7 @@ export default {
           // console.log(data)
           const jsondata = JSON.parse(data)
           console.log(jsondata)
+          commit('setCompanies', jsondata)
         }
       }) // end ajax
     }
@@ -177,6 +187,12 @@ export default {
   getters: {
     user (state) {
       return state.user
+    },
+    companies (state) {
+      return state.companies
+    },
+    yards (state) {
+      return state.yards
     }
   }
 }
