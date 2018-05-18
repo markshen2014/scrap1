@@ -14,7 +14,8 @@ Vue.config.productionTip = false
 
 window.$ = window.jQuery = require('jquery')
 window.$ajax = window.$.ajax
-window.url = 'http://iybcons.iyb.ca:8484/marks'
+// window.url = 'http://iybcons.iyb.ca:8484/marks'
+window.url = 'https://iybcons2.scrapitsoftware.com:4443/marks'
 
 Vue.component('app-alert', AlertCmp)
 
